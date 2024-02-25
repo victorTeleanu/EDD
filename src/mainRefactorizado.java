@@ -15,7 +15,9 @@ public class mainRefactorizado {
         imprimirVector(primos);
     }
 
-    // Imprimir vector inicial hasta el número dado
+    /** Imprimir vector inicial hasta el número dado
+     * @param max Tamaño máximo del array
+    */
     public static void imprimirVectorInicial(int max) {
         for (int i = 1; i <= max; i++) {
             if (i % 10 == 0) System.out.println();
@@ -23,7 +25,9 @@ public class mainRefactorizado {
         }
     }
 
-    // Imprimir vector de primos
+    /** Imprimir vector de primos
+     * @param vector Almacena todos los datos hasta el máximo para después imprimirlo
+     */
     public static void imprimirVector(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             if (i % 10 == 0) System.out.println();
@@ -41,6 +45,9 @@ public class mainRefactorizado {
         return rellenarPrimos(cuentaPrimos(esPrimo), max, esPrimo);
     }
 
+    /** Rellena el array
+     * @param esPrimo Dice si es primo o no
+     */
     public static boolean[] rellenarArray(boolean[] esPrimo, int max) {
         for (int i = 2; i <= max; i++) {
             esPrimo[i] = true;
@@ -48,6 +55,7 @@ public class mainRefactorizado {
         return esPrimo;
     }
 
+    // Cuenta la cantidad de primos existen
     public static int cuentaPrimos(boolean[] esPrimo) {
         int cuenta = 0;
         for (boolean primo : esPrimo) {
@@ -56,6 +64,9 @@ public class mainRefactorizado {
         return cuenta;
     }
 
+    /** Rellenar el vector de números primos
+     * @param cuenta Cantidad de primos que hay
+     */
     public static int[] rellenarPrimos(int cuenta, int max, boolean[] esPrimo) {
         int[] primos = new int[cuenta];
         int idx = 0;
@@ -66,6 +77,8 @@ public class mainRefactorizado {
         }
         return primos;
     }
+
+    // Elimina los números que no son primos
     public static boolean[] cribaErastotenes(boolean[] esPrimo, int max) {
         for (int i = 2; i * i <= max; i++) {
         if (esPrimo[i]) {
